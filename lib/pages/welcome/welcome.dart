@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:saffron_mobile/pages/welcome/login_screen.dart';
 import '/widgets.dart';
 import '/constants.dart';
 
@@ -65,7 +66,11 @@ class _WelcomePageState extends State<WelcomePage> {
                                   fontSize: 18,
                                   textColor: saffron_gray191,
                                   onPressed: () {
-                                    print("worked");
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                LoginPage(title: "LoginPage")));
                                   },
                                 )
                               ])))),
