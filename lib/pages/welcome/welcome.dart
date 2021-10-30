@@ -52,8 +52,8 @@ class _WelcomePageState extends State<WelcomePage> {
                                   text: "GET STARTED",
                                   width: 320,
                                   height: 47,
-                                  fontSize: 20,
-                                  outlineColor: Color(0xFFB00B69),
+                                  fontSize: 18,
+                                  textColor: saffron_liliac,
                                   onPressed: () {
                                     print("worked");
                                   },
@@ -62,8 +62,8 @@ class _WelcomePageState extends State<WelcomePage> {
                                   text: "I ALREADY HAVE AN ACCOUNT",
                                   width: 320,
                                   height: 47,
-                                  fontSize: 20,
-                                  outlineColor: Color(0xFFB00B69),
+                                  fontSize: 18,
+                                  textColor: saffron_gray191,
                                   onPressed: () {
                                     print("worked");
                                   },

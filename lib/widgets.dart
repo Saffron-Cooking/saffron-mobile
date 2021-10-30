@@ -5,14 +5,15 @@ class ButtonRound extends StatelessWidget {
   final Function? onPressed;
   final double height, width, fontSize;
   final String text;
-  final Color outlineColor;
+  final Color outlineColor, textColor;
   ButtonRound(
       {this.onPressed,
       this.height = 40,
       this.width = 200,
       this.fontSize = 14,
       this.text = '',
-      this.outlineColor = Colors.white});
+      this.outlineColor = Colors.transparent,
+      this.textColor = Colors.transparent});
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +32,7 @@ class ButtonRound extends StatelessWidget {
       },
       child: Text(text,
           style: TextStyle(
-              color: outlineColor,
+              color: textColor,
               fontSize: fontSize,
               fontWeight: FontWeight.bold)),
     );
