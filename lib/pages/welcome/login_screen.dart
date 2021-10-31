@@ -109,16 +109,22 @@ class _LoginPageState extends State<LoginPage> {
                         child: Column(mainAxisAlignment: MainAxisAlignment.spaceAround, children: <Widget>[
                           Text('— OR —', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w500)),
                           Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: <Widget>[
-                            Image.asset(
-                              'images/google_logo.png',
-                              width: 70,
-                              height: 70,
-                            ),
-                            Image.asset(
-                              'images/facebook_logo.png',
-                              width: 70,
-                              height: 70,
-                            )
+                            TextButton(
+                                style: ButtonStyle(overlayColor: MaterialStateProperty.all<Color>(Colors.transparent)),
+                                onPressed: () {},
+                                child: Image.asset(
+                                  'images/google_logo.png',
+                                  width: 70,
+                                  height: 70,
+                                )),
+                            TextButton(
+                                style: ButtonStyle(overlayColor: MaterialStateProperty.all<Color>(Colors.transparent)),
+                                onPressed: () {},
+                                child: Image.asset(
+                                  'images/facebook_logo.png',
+                                  width: 70,
+                                  height: 70,
+                                ))
                           ])
                         ]))
                   ]))
