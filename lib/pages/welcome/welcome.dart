@@ -19,7 +19,7 @@ class _WelcomePageState extends State<WelcomePage> {
         body: Container(
             decoration: BoxDecoration(
                 gradient: LinearGradient(begin: Alignment.topRight, end: Alignment.bottomLeft, colors: [saffron_liliac, saffron_yellow])),
-            child: Stack(children: <Widget>[
+            child: Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: <Widget>[
               Align(
                   alignment: Alignment(0.0, -0.6),
                   child: Container(
@@ -45,16 +45,16 @@ class _WelcomePageState extends State<WelcomePage> {
                               width: 320,
                               height: 47,
                               fontSize: 18,
+                              fontWeight: FontWeight.w500,
                               textColor: saffron_liliac,
-                              onPressed: () {
-                                print("worked");
-                              },
+                              onPressed: () {},
                             ),
                             ButtonRound(
                               text: "I ALREADY HAVE AN ACCOUNT",
                               width: 320,
                               height: 47,
                               fontSize: 18,
+                              fontWeight: FontWeight.w500,
                               textColor: saffron_gray69,
                               onPressed: () {
                                 Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage(title: "LoginPage")));

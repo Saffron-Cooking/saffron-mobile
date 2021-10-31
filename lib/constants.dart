@@ -7,5 +7,6 @@ const Color saffron_gray69 = Color(0xFF696969);
 const Color saffron_gray95 = Color(0xFF959595);
 const Color saffron_red = Color(0xFFFF3333);
 const Color saffron_red191 = Color(0xFFBF2222);
+const Color saffron_hyperblue = Color(0xFF0645AD);
 
 const double default_elevation = 2;

@@ -14,6 +14,12 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  TextEditingController mailControler = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+
+  bool isMailError = false;
+  bool isPasswordError = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,72 +42,86 @@ class _LoginPageState extends State<LoginPage> {
                                   onPressed: () {
                                     Navigator.pop(context);
                                   })))),
-                  //saffron logo
-                  Align(
-                      alignment: Alignment(0.0, -0.65),
-                      child: Image.asset(
-                        'images/saffron_logo82.png',
-                        width: 82,
-                        height: 82,
-                      )),
-                  //Sign In segment
-                  Align(
-                      alignment: Alignment(0.0, -0.1),
-                      child: Padding(
-                        padding: EdgeInsets.fromLTRB(40, 20, 40, 20),
-                        child: Container(
-                            alignment: Alignment.center,
-                            height: 250,
-                            width: 320,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: <Widget>[
-                                Text("Sign In", style: TextStyle(fontSize: 36)),
-                                //Email input row
-                                Container(
-                                    height: 90,
-                                    child: Column(
-                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                      children: <Widget>[
-                                        Align(alignment: Alignment.topLeft, child: Text("Email")),
-                                        Material(
-                                          color: Color(0x9FFFFFFF),
-                                          borderRadius: BorderRadiusDirectional.circular(10),
-                                          elevation: default_elevation,
-                                          shadowColor: saffron_liliac,
-                                          child: TextField(
-                                              decoration: InputDecoration(
-                                                  border: InputBorder.none,
-                                                  hintText: "Enter your email",
-                                                  hintStyle: TextStyle(color: Colors.white, fontWeight: FontWeight.w400),
-                                                  icon: Padding(padding: EdgeInsets.fromLTRB(15, 0, 0, 0), child: Icon(CupertinoIcons.mail)))),
-                                        ),
-                                        Align(
-                                            alignment: Alignment.bottomRight,
-                                            child: Text(
-                                              "Invalid email adress",
-                                              style: TextStyle(color: saffron_red191),
-                                            )),
-                                      ],
-                                    )),
-                                //Password input row
-                                Container(
-                                    height: 80,
-                                    child: Column(
-                                      children: <Widget>[
-                                        Align(alignment: Alignment.topLeft, child: Text("Password")),
-                                        TextField(),
-                                        Align(
-                                            alignment: Alignment.bottomRight,
-                                            child: Text(
-                                              "Incorrect password",
-                                              style: TextStyle(color: saffron_red191),
-                                            )),
-                                      ],
-                                    )),
-                              ],
-                            )),
-                      ))
+                  Center(
+                      child: Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: <Widget>[
+                    //saffron logo
+                    Padding(
+                        padding: EdgeInsets.fromLTRB(40, 10, 40, 10),
+                        child: Image.asset(
+                          'images/saffron_logo82.png',
+                          width: 82,
+                          height: 82,
+                        )),
+                    //Sign In segment
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(40, 10, 40, 10),
+                      child: Container(
+                          alignment: Alignment.center,
+                          height: 248,
+                          width: 320,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+                              Text("Sign In", style: TextStyle(fontSize: 34)),
+                              //Email input row
+                              InputTextField(
+                                  label: 'Email',
+                                  hint: 'Enter your email',
+                                  isError: isMailError,
+                                  error: 'Invalid email adress',
+                                  errorColor: saffron_hyperblue,
+                                  controller: mailControler,
+                                  icon: Icon(CupertinoIcons.mail, color: Colors.white)),
+                              //Password input row
+                              InputTextField(
+                                  label: 'Password',
+                                  hint: 'Enter your password',
+                                  isError: isPasswordError,
+                                  error: 'Incorrect password',
+                                  errorColor: saffron_hyperblue,
+                                  controller: passwordController,
+                                  icon: Icon(CupertinoIcons.lock, color: Colors.white)),
+                              Align(
+                                  alignment: Alignment.bottomRight,
+                                  child: TextButton(
+                                      style: ButtonStyle(overlayColor: MaterialStateProperty.all<Color>(Colors.transparent)),
+                                      onPressed: () {},
+                                      child: Text('Forgot your password?', style: TextStyle(color: Colors.white))))
+                            ],
+                          )),
+                    ),
+                    //login button
+                    Padding(
+                        padding: EdgeInsets.fromLTRB(40, 10, 40, 10),
+                        child: ButtonRound(
+                          text: "LOGIN",
+                          width: 320,
+                          height: 47,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                          textColor: saffron_liliac,
+                          onPressed: () {},
+                        )),
+                    //alternative sign in
+                    Container(
+                        height: 130,
+                        width: 320,
+                        child: Column(mainAxisAlignment: MainAxisAlignment.spaceAround, children: <Widget>[
+                          Text('— OR —', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w500)),
+                          Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: <Widget>[
+                            Image.asset(
+                              'images/google_logo.png',
+                              width: 70,
+                              height: 70,
+                            ),
+                            Image.asset(
+                              'images/facebook_logo.png',
+                              width: 70,
+                              height: 70,
+                            )
+                          ])
+                        ]))
+                  ]))
                 ]))));
   }
 }
