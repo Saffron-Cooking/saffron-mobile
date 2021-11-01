@@ -25,8 +25,7 @@ class _LoginPageState extends State<LoginPage> {
         body: Material(
             textStyle: TextStyle(color: Colors.white),
             child: Container(
-                decoration: BoxDecoration(
-                    gradient: LinearGradient(begin: Alignment.topRight, end: Alignment.bottomLeft, colors: [saffron_liliac, saffron_yellow])),
+                decoration: BoxDecoration(gradient: saffron_gradient),
                 child: Stack(children: <Widget>[
                   //back button
                   Align(

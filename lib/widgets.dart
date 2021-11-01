@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:saffron_mobile/constants.dart';
 
+//custom round button with chadows and gradient outline
 class ButtonRound extends StatelessWidget {
   final Function? onPressed;
   final double height, width, fontSize, outlineWidth;
@@ -40,6 +41,7 @@ class ButtonRound extends StatelessWidget {
   }
 }
 
+//custom text input field with title, hint, icon and error message
 class InputTextField extends StatelessWidget {
   final TextEditingController controller;
   final Widget icon;
@@ -83,6 +85,34 @@ class InputTextField extends StatelessWidget {
                   isError ? error : '',
                   style: TextStyle(color: errorColor),
                 )),
+          ],
+        ));
+  }
+}
+
+//custom Appbar with gradient for saffron pages
+
+class SaffronHeader extends StatelessWidget implements PreferredSize {
+  final Gradient gradient;
+  final Widget child;
+  final Size preferredSize = const Size.fromHeight(saffron_header_preferred_height);
+
+  SaffronHeader({this.gradient = saffron_gradient, this.child = const Text('')});
+
+  Widget build(BuildContext context) {
+    return Container(
+        height: saffron_header_preferred_height,
+        color: Colors.white,
+        child: Stack(
+          children: <Widget>[
+            Center(child: child),
+            Align(
+                alignment: Alignment.bottomCenter,
+                child: Container(
+                    height: 2.5,
+                    decoration: BoxDecoration(
+                      gradient: gradient,
+                    )))
           ],
         ));
   }

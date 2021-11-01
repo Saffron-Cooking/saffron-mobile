@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:saffron_mobile/pages/welcome/login_screen.dart';
+import 'package:saffron_mobile/pages/registration/preference_page_preset.dart';
 import 'package:saffron_mobile/widgets.dart';
 import 'package:saffron_mobile/constants.dart';
 
@@ -17,8 +18,7 @@ class _WelcomePageState extends State<WelcomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Container(
-            decoration: BoxDecoration(
-                gradient: LinearGradient(begin: Alignment.topRight, end: Alignment.bottomLeft, colors: [saffron_liliac, saffron_yellow])),
+            decoration: BoxDecoration(gradient: saffron_gradient),
             child: Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: <Widget>[
               Align(
                   alignment: Alignment(0.0, -0.6),

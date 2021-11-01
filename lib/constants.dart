@@ -9,4 +9,8 @@ const Color saffron_red = Color(0xFFFF3333);
 const Color saffron_red191 = Color(0xFFBF2222);
 const Color saffron_hyperblue = Color(0xFF0645AD);
 
+const Gradient saffron_gradient = LinearGradient(begin: Alignment.bottomLeft, end: Alignment.topRight, colors: [saffron_yellow, saffron_liliac]);
+
 const double default_elevation = 2;
+
+const double saffron_header_preferred_height = 55;
