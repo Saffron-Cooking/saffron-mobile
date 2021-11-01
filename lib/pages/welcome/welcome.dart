@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:saffron_mobile/pages/welcome/login_screen.dart';
-import '/widgets.dart';
-import '/constants.dart';
+import 'package:saffron_mobile/widgets.dart';
+import 'package:saffron_mobile/constants.dart';
 
 class WelcomePage extends StatefulWidget {
   WelcomePage({Key? key, required this.title}) : super(key: key);

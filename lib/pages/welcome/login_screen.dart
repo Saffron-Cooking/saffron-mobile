@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '/widgets.dart';
-import '/constants.dart';
-import 'package:cupertino_icons/cupertino_icons.dart';
+import 'package:saffron_mobile/widgets.dart';
+import 'package:saffron_mobile/constants.dart';
 
 class LoginPage extends StatefulWidget {
   LoginPage({Key? key, required this.title}) : super(key: key);
