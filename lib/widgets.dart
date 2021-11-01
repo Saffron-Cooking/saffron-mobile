@@ -7,7 +7,7 @@ class ButtonRound extends StatelessWidget {
   final String text;
   final Color outlineColor, textColor;
   final FontWeight fontWeight;
-  final Gradient? outlineGradient;
+  final Gradient outlineGradient;
   ButtonRound(
       {this.onPressed,
       this.height = 40,
@@ -18,15 +18,13 @@ class ButtonRound extends StatelessWidget {
       this.outlineColor = Colors.transparent,
       this.textColor = Colors.transparent,
       this.fontWeight = FontWeight.normal,
-      this.outlineGradient});
+      this.outlineGradient = const LinearGradient(colors: [Colors.white, Colors.white])});
 
   Widget build(BuildContext context) {
     return Container(
         height: height,
         width: width,
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(height / 2),
-            gradient: outlineGradient == null ? LinearGradient(colors: [Colors.white, Colors.white]) : outlineGradient),
+        decoration: BoxDecoration(borderRadius: BorderRadius.circular(height / 2), gradient: outlineGradient),
         child: Padding(
             padding: EdgeInsets.all(outlineWidth),
             child: ElevatedButton(
