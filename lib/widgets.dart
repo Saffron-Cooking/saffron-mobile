@@ -6,20 +6,19 @@ class ButtonRound extends StatelessWidget {
   final Function? onPressed;
   final double height, width, fontSize, outlineWidth;
   final String text;
-  final Color outlineColor, textColor;
+  final Color textColor;
   final FontWeight fontWeight;
   final Gradient outlineGradient;
   ButtonRound(
       {this.onPressed,
-      this.height = 40,
-      this.width = 200,
-      this.fontSize = 14,
+      this.height = 47,
+      this.width = 320,
+      this.fontSize = 18,
       this.outlineWidth = 0,
       this.text = '',
-      this.outlineColor = Colors.transparent,
-      this.textColor = Colors.transparent,
-      this.fontWeight = FontWeight.normal,
-      this.outlineGradient = const LinearGradient(colors: [Colors.white, Colors.white])});
+      this.textColor = saffron_gray69,
+      this.fontWeight = FontWeight.w500,
+      this.outlineGradient = saffron_gradient});
 
   Widget build(BuildContext context) {
     return Container(
@@ -94,26 +93,30 @@ class InputTextField extends StatelessWidget {
 
 class SaffronHeader extends StatelessWidget implements PreferredSize {
   final Gradient gradient;
+  final TextStyle textStyle;
   final Widget child;
   final Size preferredSize = const Size.fromHeight(saffron_header_preferred_height);
 
-  SaffronHeader({this.gradient = saffron_gradient, this.child = const Text('')});
+  SaffronHeader(
+      {this.gradient = saffron_gradient, this.child = const Text(''), this.textStyle = const TextStyle(color: saffron_gray69, fontSize: 20)});
 
   Widget build(BuildContext context) {
-    return Container(
-        height: saffron_header_preferred_height,
-        color: Colors.white,
-        child: Stack(
-          children: <Widget>[
-            Center(child: child),
-            Align(
-                alignment: Alignment.bottomCenter,
-                child: Container(
-                    height: 2.5,
-                    decoration: BoxDecoration(
-                      gradient: gradient,
-                    )))
-          ],
-        ));
+    return Material(
+        textStyle: textStyle,
+        child: Container(
+            height: saffron_header_preferred_height,
+            color: Colors.white,
+            child: Stack(
+              children: <Widget>[
+                Center(child: child),
+                Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Container(
+                        height: 2.5,
+                        decoration: BoxDecoration(
+                          gradient: gradient,
+                        )))
+              ],
+            )));
   }
 }

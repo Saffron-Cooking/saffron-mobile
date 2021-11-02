@@ -93,10 +93,6 @@ class _LoginPageState extends State<LoginPage> {
                         padding: EdgeInsets.fromLTRB(40, 10, 40, 10),
                         child: ButtonRound(
                           text: "LOGIN",
-                          width: 320,
-                          height: 47,
-                          fontSize: 18,
-                          fontWeight: FontWeight.w500,
                           textColor: saffron_liliac,
                           onPressed: () {},
                         )),

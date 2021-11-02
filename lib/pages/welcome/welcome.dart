@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:saffron_mobile/pages/welcome/login_screen.dart';
-import 'package:saffron_mobile/pages/registration/preference_page_preset.dart';
+import 'package:saffron_mobile/pages/registration/question_page_preset.dart';
 import 'package:saffron_mobile/widgets.dart';
 import 'package:saffron_mobile/constants.dart';
 
@@ -42,19 +42,13 @@ class _WelcomePageState extends State<WelcomePage> {
                           child: Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: <Widget>[
                             ButtonRound(
                               text: "GET STARTED",
-                              width: 320,
-                              height: 47,
-                              fontSize: 18,
-                              fontWeight: FontWeight.w500,
                               textColor: saffron_liliac,
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => PreferencePreset(title: "1st question")));
+                              },
                             ),
                             ButtonRound(
                               text: "I ALREADY HAVE AN ACCOUNT",
-                              width: 320,
-                              height: 47,
-                              fontSize: 18,
-                              fontWeight: FontWeight.w500,
                               textColor: saffron_gray69,
                               onPressed: () {
                                 Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage(title: "LoginPage")));
