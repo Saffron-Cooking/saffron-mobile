@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:saffron_mobile/widgets.dart';
@@ -46,7 +44,7 @@ class _PreferencePresetState extends State<PreferencePreset> {
                     children: <Widget>[
                       ButtonRound(
                         text: widget.ans1,
-                        outlineWidth: 2,
+                        outlineWidth: 1.5,
                       ),
                       Container(height: 30),
                       ButtonRound(

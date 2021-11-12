@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:saffron_mobile/pages/registration/registration_form.dart';
 import 'package:saffron_mobile/pages/welcome/login_screen.dart';
 import 'package:saffron_mobile/pages/registration/question_page_preset.dart';
 import 'package:saffron_mobile/widgets.dart';
@@ -36,7 +37,7 @@ class _WelcomePageState extends State<WelcomePage> {
               Align(
                   alignment: Alignment(0.0, 0.87),
                   child: Padding(
-                      padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+                      padding: EdgeInsets.fromLTRB(40, 0, 40, 0),
                       child: Container(
                           height: 200,
                           child: Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: <Widget>[
@@ -44,7 +45,7 @@ class _WelcomePageState extends State<WelcomePage> {
                               text: "GET STARTED",
                               textColor: saffron_liliac,
                               onPressed: () {
-                                Navigator.push(context, MaterialPageRoute(builder: (context) => PreferencePreset(title: "1st question")));
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => RegistrationForm(title: "Form")));
                               },
                             ),
                             ButtonRound(

@@ -43,49 +43,53 @@ class ButtonRound extends StatelessWidget {
 //custom text input field with title, hint, icon and error message
 class InputTextField extends StatelessWidget {
   final TextEditingController controller;
-  final Widget icon;
+  final Widget? icon;
   final String label, hint, error;
-  final Color textColor, errorColor;
+  final Color textColor, errorColor, hintColor, shadowColor;
+  final InputBorder border;
   final bool isError;
   InputTextField(
       {required this.controller,
-      required this.icon,
+      this.icon,
       this.label = '',
       this.hint = '',
       this.error = '',
       this.textColor = Colors.white,
       this.errorColor = saffron_red,
+      this.hintColor = Colors.white,
+      this.shadowColor = Colors.transparent,
+      this.border = InputBorder.none,
       this.isError = false});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: 90,
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            Align(alignment: Alignment.topLeft, child: Text(label)),
-            Material(
-                color: Color(0x9FFFFFFF),
-                borderRadius: BorderRadiusDirectional.circular(10),
-                elevation: default_elevation,
-                shadowColor: saffron_liliac,
-                child: TextField(
-                    style: TextStyle(color: textColor),
-                    controller: controller,
-                    decoration: InputDecoration(
-                        border: InputBorder.none,
-                        hintText: hint,
-                        hintStyle: TextStyle(color: Colors.white, fontWeight: FontWeight.w400),
-                        icon: Padding(padding: EdgeInsets.fromLTRB(15, 0, 0, 0), child: icon)))),
-            Align(
-                alignment: Alignment.bottomRight,
-                child: Text(
-                  isError ? error : '',
-                  style: TextStyle(color: errorColor),
-                )),
-          ],
-        ));
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: <Widget>[
+        Container(child: label == '' ? null : Align(alignment: Alignment.topLeft, child: Text(label))),
+        Material(
+            color: Color(0x9FFFFFFF),
+            borderRadius: BorderRadiusDirectional.circular(10),
+            elevation: default_elevation,
+            shadowColor: shadowColor,
+            child: TextField(
+                style: TextStyle(color: textColor),
+                controller: controller,
+                decoration: InputDecoration(
+                  border: border,
+                  hintText: hint,
+                  hintStyle: TextStyle(color: hintColor, fontWeight: FontWeight.w400),
+                  icon: icon == null ? null : Padding(padding: EdgeInsets.fromLTRB(15, 0, 0, 0), child: icon),
+                ))),
+        Align(
+            alignment: Alignment.bottomRight,
+            child: Text(
+              isError ? error : '',
+              style: TextStyle(color: errorColor),
+            )),
+      ],
+    ));
   }
 }
 

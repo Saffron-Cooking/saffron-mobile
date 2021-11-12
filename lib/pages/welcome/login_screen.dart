@@ -68,6 +68,7 @@ class _LoginPageState extends State<LoginPage> {
                                   isError: isMailError,
                                   error: 'Invalid email adress',
                                   errorColor: saffron_hyperblue,
+                                  shadowColor: saffron_liliac,
                                   controller: mailControler,
                                   icon: Icon(CupertinoIcons.mail, color: Colors.white)),
                               //Password input row
@@ -77,6 +78,7 @@ class _LoginPageState extends State<LoginPage> {
                                   isError: isPasswordError,
                                   error: 'Incorrect password',
                                   errorColor: saffron_hyperblue,
+                                  shadowColor: saffron_liliac,
                                   controller: passwordController,
                                   icon: Icon(CupertinoIcons.lock, color: Colors.white)),
                               Align(
