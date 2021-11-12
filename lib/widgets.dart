@@ -24,18 +24,27 @@ class ButtonRound extends StatelessWidget {
     return Container(
         height: height,
         width: width,
-        decoration: BoxDecoration(borderRadius: BorderRadius.circular(height / 2), gradient: outlineGradient),
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(height / 2),
+            gradient: outlineGradient),
         child: Padding(
             padding: EdgeInsets.all(outlineWidth),
             child: ElevatedButton(
               style: ButtonStyle(
                   shadowColor: MaterialStateProperty.all<Color>(saffron_liliac),
-                  backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
-                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(RoundedRectangleBorder(borderRadius: BorderRadius.circular(height / 2)))),
+                  backgroundColor:
+                      MaterialStateProperty.all<Color>(Colors.white),
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(height / 2)))),
               onPressed: () {
                 onPressed!();
               },
-              child: Text(text, style: TextStyle(color: textColor, fontSize: fontSize, fontWeight: fontWeight)),
+              child: Text(text,
+                  style: TextStyle(
+                      color: textColor,
+                      fontSize: fontSize,
+                      fontWeight: fontWeight)),
             )));
   }
 }
@@ -67,7 +76,10 @@ class InputTextField extends StatelessWidget {
         child: Column(
       mainAxisAlignment: MainAxisAlignment.start,
       children: <Widget>[
-        Container(child: label == '' ? null : Align(alignment: Alignment.topLeft, child: Text(label))),
+        Container(
+            child: label == ''
+                ? null
+                : Align(alignment: Alignment.topLeft, child: Text(label))),
         Material(
             color: Color(0x9FFFFFFF),
             borderRadius: BorderRadiusDirectional.circular(10),
@@ -79,8 +91,13 @@ class InputTextField extends StatelessWidget {
                 decoration: InputDecoration(
                   border: border,
                   hintText: hint,
-                  hintStyle: TextStyle(color: hintColor, fontWeight: FontWeight.w400),
-                  icon: icon == null ? null : Padding(padding: EdgeInsets.fromLTRB(15, 0, 0, 0), child: icon),
+                  hintStyle:
+                      TextStyle(color: hintColor, fontWeight: FontWeight.w400),
+                  icon: icon == null
+                      ? null
+                      : Padding(
+                          padding: EdgeInsets.fromLTRB(15, 0, 0, 0),
+                          child: icon),
                 ))),
         Align(
             alignment: Alignment.bottomRight,
@@ -99,10 +116,13 @@ class SaffronHeader extends StatelessWidget implements PreferredSize {
   final Gradient gradient;
   final TextStyle textStyle;
   final Widget child;
-  final Size preferredSize = const Size.fromHeight(saffron_header_preferred_height);
+  final Size preferredSize =
+      const Size.fromHeight(saffron_header_preferred_height);
 
   SaffronHeader(
-      {this.gradient = saffron_gradient, this.child = const Text(''), this.textStyle = const TextStyle(color: saffron_gray69, fontSize: 20)});
+      {this.gradient = saffron_gradient,
+      this.child = const Text(''),
+      this.textStyle = const TextStyle(color: saffron_gray69, fontSize: 20)});
 
   Widget build(BuildContext context) {
     return Material(

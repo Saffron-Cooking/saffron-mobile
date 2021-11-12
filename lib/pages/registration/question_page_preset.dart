@@ -27,14 +27,17 @@ class _PreferencePresetState extends State<PreferencePreset> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: SaffronHeader(gradient: widget.headerGradient, child: Text(widget.headerText)),
+        appBar: SaffronHeader(
+            gradient: widget.headerGradient, child: Text(widget.headerText)),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
               Padding(
                   padding: EdgeInsets.fromLTRB(40, 20, 40, 20),
-                  child: Text(widget.question, textAlign: TextAlign.center, style: TextStyle(color: saffron_liliac, fontSize: 48))),
+                  child: Text(widget.question,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(color: saffron_liliac, fontSize: 48))),
               Container(),
               Padding(
                 padding: EdgeInsets.fromLTRB(40, 20, 20, 40),

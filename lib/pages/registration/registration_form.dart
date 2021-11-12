@@ -34,12 +34,14 @@ class _RegistrationFormState extends State<RegistrationForm> {
   bool isPassword1Error = false;
   bool isPassword2Error = false;
 
-  OutlineInputBorder defaultBorder = OutlineInputBorder(borderRadius: BorderRadius.circular(13));
+  OutlineInputBorder defaultBorder =
+      OutlineInputBorder(borderRadius: BorderRadius.circular(13));
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: SaffronHeader(gradient: widget.headerGradient, child: Text(widget.headerText)),
+        appBar: SaffronHeader(
+            gradient: widget.headerGradient, child: Text(widget.headerText)),
         body: SingleChildScrollView(
             child: Center(
                 child: Padding(
@@ -54,7 +56,11 @@ class _RegistrationFormState extends State<RegistrationForm> {
                             hintColor: saffron_gray69,
                             border: defaultBorder,
                           ),
-                          InputTextField(controller: surname, hint: 'Surname', hintColor: saffron_gray69, border: defaultBorder),
+                          InputTextField(
+                              controller: surname,
+                              hint: 'Surname',
+                              hintColor: saffron_gray69,
+                              border: defaultBorder),
                           InputTextField(
                               controller: email,
                               hint: 'Email',
@@ -68,7 +74,8 @@ class _RegistrationFormState extends State<RegistrationForm> {
                               hint: 'Password',
                               hintColor: saffron_gray69,
                               isError: isPassword1Error,
-                              error: 'sjfnivsufvnlsdgkhjblghkvstrleumkglhs b,djgkjv,dzhjfvlgbmsdkjlhglcsivuzghxbnciudkvgnsdhjx',
+                              error:
+                                  'sjfnivsufvnlsdgkhjblghkvstrleumkglhs b,djgkjv,dzhjfvlgbmsdkjlhglcsivuzghxbnciudkvgnsdhjx',
                               errorColor: saffron_red,
                               border: defaultBorder),
                           InputTextField(

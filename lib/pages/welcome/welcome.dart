@@ -20,42 +20,60 @@ class _WelcomePageState extends State<WelcomePage> {
     return Scaffold(
         body: Container(
             decoration: BoxDecoration(gradient: saffron_gradient),
-            child: Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: <Widget>[
-              Align(
-                  alignment: Alignment(0.0, -0.6),
-                  child: Container(
-                      width: 178,
-                      height: 250,
-                      child: Column(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: <Widget>[
-                        Image.asset(
-                          'images/saffron_logo178.png',
-                          width: 178,
-                          height: 178,
-                        ),
-                        Text("Saffron", style: TextStyle(color: Colors.white, fontSize: 45))
-                      ]))),
-              Align(
-                  alignment: Alignment(0.0, 0.87),
-                  child: Padding(
-                      padding: EdgeInsets.fromLTRB(40, 0, 40, 0),
+            child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  Align(
+                      alignment: Alignment(0.0, -0.6),
                       child: Container(
-                          height: 200,
-                          child: Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: <Widget>[
-                            ButtonRound(
-                              text: "GET STARTED",
-                              textColor: saffron_liliac,
-                              onPressed: () {
-                                Navigator.push(context, MaterialPageRoute(builder: (context) => RegistrationForm(title: "Form")));
-                              },
-                            ),
-                            ButtonRound(
-                              text: "I ALREADY HAVE AN ACCOUNT",
-                              textColor: saffron_gray69,
-                              onPressed: () {
-                                Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage(title: "LoginPage")));
-                              },
-                            )
-                          ])))),
-            ])));
+                          width: 178,
+                          height: 250,
+                          child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: <Widget>[
+                                Image.asset(
+                                  'images/saffron_logo178.png',
+                                  width: 178,
+                                  height: 178,
+                                ),
+                                Text("Saffron",
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 45))
+                              ]))),
+                  Align(
+                      alignment: Alignment(0.0, 0.87),
+                      child: Padding(
+                          padding: EdgeInsets.fromLTRB(40, 0, 40, 0),
+                          child: Container(
+                              height: 200,
+                              child: Column(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: <Widget>[
+                                    ButtonRound(
+                                      text: "GET STARTED",
+                                      textColor: saffron_liliac,
+                                      onPressed: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    RegistrationForm(
+                                                        title: "Form")));
+                                      },
+                                    ),
+                                    ButtonRound(
+                                      text: "I ALREADY HAVE AN ACCOUNT",
+                                      textColor: saffron_gray69,
+                                      onPressed: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) => LoginPage(
+                                                    title: "LoginPage")));
+                                      },
+                                    )
+                                  ])))),
+                ])));
   }
 }
